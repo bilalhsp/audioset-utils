@@ -1,4 +1,39 @@
 
+"""
+downloader.py
+
+This module provides functionality for downloading audio data
+from youtube videos.
+
+Author: Bilal Ahmed
+Date: 07-16-2024
+Version: 1.0
+License: MIT
+Dependencies: None
+
+Purpose
+-------
+This module provides high level access to dataset downloading,
+after excluding certain filters. User can specify the 
+sampling rate of downloaded dataset and preferred codec of
+downloaded files e.g. wav, flac etc.
+In addition multiprocessing is also supported to speed up the
+download process.
+
+Classes:
+    AudiosetDownloader: A class to handle audio datasets using
+        metadata and file paths.
+
+    Methods:
+        filter_and_download_audioset: method that provides
+            labels filtering and downloading functionlity,
+            user can specify 'num_proc' argument to enable 
+            multiprocessing. See scripts for example usage.  
+
+Change Log
+----------
+- 07-16-2024: Initial version created by Bilal Ahmed.
+"""
 import os
 from audioset_utils.yt_audio import AudiosetYouTube
 from audioset_utils.metadata import AudiosetMetadata
@@ -60,22 +95,7 @@ class AudiosetDownloader:
         metadata_path = os.path.join(self.data_dir, output_metadata_filename)
         downloaded_dataset.to_csv(metadata_path, index=False)
         print(f"Dataset ready, use {output_metadata_filename} to create dataset.")
-
-
-    # def download_audio_example(self, row):
-    #     """Downloads audio slice for each row of dataset and returns true when done."""
-    #     video_details = {
-    #         'video_id': row['youtube_ids'],
-    #         'start_time': row['start_times'],
-    #         'end_time': row['end_times'],
-    #         }
-    #     try:
-    #         filename = self.ayt.get_audio_slice_from_youtube(**video_details)
-    #         return True
-    #     except: 
-    #         print(f"Error trying to download {row['youtube_ids']}..")
-    #         return False
-        
+     
 
 
     ########        multiprocess functionaly ################

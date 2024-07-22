@@ -19,7 +19,7 @@ using video ID, start_time, end_time.
 
 Change Log
 ----------
-- 07-06-2024: Initial version created by Bilal Ahmed.
+- 07-16-2024: Initial version created by Bilal Ahmed.
 """
 import os
 from pathlib import Path

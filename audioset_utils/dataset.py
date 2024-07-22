@@ -4,6 +4,12 @@ dataset.py
 This module provides functionality for downloading audio data
 from youtube videos.
 
+Author: Bilal Ahmed
+Date: 07-18-2024
+Version: 1.0
+License: MIT
+Dependencies: None
+
 Purpose
 -------
 Once filtered audioset dataset is downloaded to disk,
@@ -16,13 +22,6 @@ Classes:
 Functions:
     get_huggingface_dataset(audio_dir: str, metadata_file: str, ) -> datasets.Dataset: 
         Creates a Hugging Face dataset from metadata CSV and audio files.
-
-		
-Author: Bilal Ahmed
-Date: 07-16-2024
-Version: 1.0
-License: MIT
-Dependencies: None
 
 Change Log
 ----------

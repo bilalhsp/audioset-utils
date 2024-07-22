@@ -1,3 +1,32 @@
+"""
+metadata.py
+
+This module provides functionality to read the metadata files
+provided on Audioset official website.
+
+Author: Bilal Ahmed
+Date: 07-16-2024
+Version: 1.0
+License: MIT
+Dependencies: None
+
+Purpose
+-------
+This module is designed to provide functionaly to explore the
+types of audios available, access the descriptive human labels
+and filter to get subsect of labels. It allows to have a feel 
+of what type of audios are in the dataset and what would be 
+the size of dataset (number of examples as well as hours of 
+recording) for selected labels only.
+
+Classes:
+    AudiosetMetadata: A class to explor dataset segment using
+	    metadata and class labels file.	
+
+Change Log
+----------
+- 07-16-2024: Initial version created by Bilal Ahmed.
+"""
 import os
 import csv
 import pandas as pd
@@ -17,7 +46,6 @@ class AudiosetMetadata:
 			metadata_filename: filename of data segment e.g. audio_train_unbalanced.csv
 			class_labels_filename = file with detail of all 527 labels.
 		"""
-		# self.audioset_dir = '/scratch/gilbreth/ahmedb/cache/huggingface/datasets/audioset'
 		self.audioset_dir = Path(data_dir)
 		self.metadata_filename = metadata_filename
 		self.class_labels_filename = class_labels_filename
@@ -28,7 +56,6 @@ class AudiosetMetadata:
 		self.excluded_labels = []
 
 	def read_metadata(self):
-		# metadata_filename = 'unbalanced_train_segments.csv.crdownload'
 		filepath = os.path.join(self.audioset_dir, self.metadata_filename)
 		youtube_ids = []
 		start_times = []
@@ -53,7 +80,6 @@ class AudiosetMetadata:
 		return pd.DataFrame(data_dict)
 		
 	def read_label_descriptions(self):
-		# class_labels_filename = 'class_labels_indices.csv.crdownload'
 		filepath = os.path.join(self.audioset_dir, self.class_labels_filename)
 		label_indices = []
 		labels = []
@@ -105,7 +131,6 @@ class AudiosetMetadata:
 
 	def filter_func(self, row):
 		"""Returns True for rows having no excluded label in human_labels"""
-		# excluded_labels = ['speech', 'music']
 		return not any(label in self.excluded_labels for label in row['human_labels'])
 
 	def filter_dataset(self, excluded_labels=None):
