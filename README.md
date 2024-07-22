@@ -57,7 +57,7 @@ audioset = AudiosetMetadata(**metadata_config)
 human_labels = audioset.get_all_labels()
 ```
 
-**AudiosetDownloader:** Uses metadata object and other classes to provid high level functionality for downloading dataset. Here is a simple example of how to create an instance of downlaoded.
+**AudiosetDownloader:** Uses metadata object and other classes to provid high level functionality for downloading dataset. I have used [3] and [4] to download youtube audio and extract 10 second clips respectively. Here is a simple example of how to create an instance of downlaoded.
 
 ```python
 from audioset_utils import AudiosetDownloader

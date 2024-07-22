@@ -1,5 +1,7 @@
 from setuptools import setup, find_packages
 
+with open("README.md", "r", encoding="utf-8") as fh:
+    long_description = fh.read()
 
 setup(
     name="audioset_utils",
@@ -8,7 +10,8 @@ setup(
     author="Bilal Ahmed",
     author_email="bilalhsp@gmail.com",
     url="https://github.com/bilalhsp/audioset-utils",
-    description="Utilities downloading audioset.",
+    description="Utility for downloading subsets of audioset.",
+    long_description=long_description,
     classifiers=[
         "Development Status :: 3 - Alpha",
         "Intended Audience :: Science/Research",
