@@ -111,7 +111,7 @@ This hugging face dataset is ready to use and it would have four features;
 ## References
 
 1. [Audioset Dataset](https://research.google.com/audioset/)
-2. [Hugging Audioset](https://huggingface.co/datasets/agkphysics/AudioSet)
+2. [Audioset (HuggingFace)](https://huggingface.co/datasets/agkphysics/AudioSet)
 3. [yt-dpl](https://github.com/yt-dlp/yt-dlp)
 4. [pydub](https://github.com/jiaaro/pydub)
 
